@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0603E54E20ECA9F50020BCD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603E54D20ECA9F50020BCD4 /* AppDelegate.m */; };
-		0603E55120ECA9F50020BCD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603E55020ECA9F50020BCD4 /* ViewController.m */; };
-		0603E55420ECA9F50020BCD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0603E55220ECA9F50020BCD4 /* Main.storyboard */; };
 		0603E55620ECA9F60020BCD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0603E55520ECA9F60020BCD4 /* Assets.xcassets */; };
 		0603E55920ECA9F60020BCD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0603E55720ECA9F60020BCD4 /* LaunchScreen.storyboard */; };
 		0603E55C20ECA9F60020BCD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603E55B20ECA9F60020BCD4 /* main.m */; };
 		0603E56620ECA9F60020BCD4 /* XBZAlertViewController_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603E56520ECA9F60020BCD4 /* XBZAlertViewController_DemoTests.m */; };
 		0603E57120ECA9F60020BCD4 /* XBZAlertViewController_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603E57020ECA9F60020BCD4 /* XBZAlertViewController_DemoUITests.m */; };
+		0603E59B20ECAA610020BCD4 /* UIAlertController+XBZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603E59920ECAA610020BCD4 /* UIAlertController+XBZ.m */; };
+		0603E5A120ECAADA0020BCD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0603E59F20ECAADA0020BCD4 /* ViewController.m */; };
+		0603E5A220ECAADA0020BCD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0603E5A020ECAADA0020BCD4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +39,6 @@
 		0603E54920ECA9F50020BCD4 /* XBZAlertViewController_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XBZAlertViewController_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0603E54C20ECA9F50020BCD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0603E54D20ECA9F50020BCD4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0603E54F20ECA9F50020BCD4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0603E55020ECA9F50020BCD4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0603E55320ECA9F50020BCD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0603E55520ECA9F60020BCD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0603E55820ECA9F60020BCD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0603E55A20ECA9F60020BCD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +49,11 @@
 		0603E56C20ECA9F60020BCD4 /* XBZAlertViewController_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XBZAlertViewController_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0603E57020ECA9F60020BCD4 /* XBZAlertViewController_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBZAlertViewController_DemoUITests.m; sourceTree = "<group>"; };
 		0603E57220ECA9F60020BCD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0603E59720ECAA610020BCD4 /* UIAlertController+XBZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+XBZ.h"; sourceTree = "<group>"; };
+		0603E59920ECAA610020BCD4 /* UIAlertController+XBZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+XBZ.m"; sourceTree = "<group>"; };
+		0603E59C20ECAA7F0020BCD4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0603E59F20ECAADA0020BCD4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0603E5A020ECAADA0020BCD4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +104,13 @@
 		0603E54B20ECA9F50020BCD4 /* XBZAlertViewController_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				0603E59720ECAA610020BCD4 /* UIAlertController+XBZ.h */,
+				0603E59920ECAA610020BCD4 /* UIAlertController+XBZ.m */,
 				0603E54C20ECA9F50020BCD4 /* AppDelegate.h */,
 				0603E54D20ECA9F50020BCD4 /* AppDelegate.m */,
-				0603E54F20ECA9F50020BCD4 /* ViewController.h */,
-				0603E55020ECA9F50020BCD4 /* ViewController.m */,
-				0603E55220ECA9F50020BCD4 /* Main.storyboard */,
+				0603E59C20ECAA7F0020BCD4 /* ViewController.h */,
+				0603E59F20ECAADA0020BCD4 /* ViewController.m */,
+				0603E5A020ECAADA0020BCD4 /* Main.storyboard */,
 				0603E55520ECA9F60020BCD4 /* Assets.xcassets */,
 				0603E55720ECA9F60020BCD4 /* LaunchScreen.storyboard */,
 				0603E55A20ECA9F60020BCD4 /* Info.plist */,
@@ -235,9 +240,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0603E5A220ECAADA0020BCD4 /* Main.storyboard in Resources */,
 				0603E55920ECA9F60020BCD4 /* LaunchScreen.storyboard in Resources */,
 				0603E55620ECA9F60020BCD4 /* Assets.xcassets in Resources */,
-				0603E55420ECA9F50020BCD4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0603E55120ECA9F50020BCD4 /* ViewController.m in Sources */,
+				0603E59B20ECAA610020BCD4 /* UIAlertController+XBZ.m in Sources */,
 				0603E55C20ECA9F60020BCD4 /* main.m in Sources */,
 				0603E54E20ECA9F50020BCD4 /* AppDelegate.m in Sources */,
+				0603E5A120ECAADA0020BCD4 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +306,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0603E55220ECA9F50020BCD4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0603E55320ECA9F50020BCD4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0603E55720ECA9F60020BCD4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
