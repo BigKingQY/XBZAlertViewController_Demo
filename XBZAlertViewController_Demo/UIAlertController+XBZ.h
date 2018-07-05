@@ -15,7 +15,7 @@ typedef void(^ActionTwo)(void);
 @interface UIAlertController (XBZ)
 
 /**
- 不带message的弹出提示，默认显示2s自动dismiss
+ 只显示标题，默认2s后dismiss
 
  @param controller 当前弹出的控制器
  @param title 标题
@@ -24,7 +24,7 @@ typedef void(^ActionTwo)(void);
 
 
 /**
- 不带message的弹出提示，可自定义dismiss时间
+ 只显示标题，自定义dismiss时间
 
  @param controller 当前弹出的控制器
  @param title 标题
@@ -33,7 +33,7 @@ typedef void(^ActionTwo)(void);
 + (void)alertWithController:(nonnull UIViewController *)controller title:(nonnull NSString *)title timeInterval:(NSTimeInterval)timerInerval;
 
 /**
- 带message的弹出提示，默认显示2s自动dismiss掉
+ 显示标题+消息，默认显示2s后dismiss
 
  @param controller 当前弹出的控制器
  @param title 标题
@@ -42,7 +42,7 @@ typedef void(^ActionTwo)(void);
 + (void)alertWithController:(nonnull UIViewController *)controller title:(nonnull NSString *)title message:(nonnull NSString *)message;
 
 /**
- 带message的弹出提示，可自定义dismiss时间
+ 显示标题+消息，可自定义dismiss时间
 
  @param controller 当前弹出的控制器
  @param title 标题
@@ -54,7 +54,7 @@ typedef void(^ActionTwo)(void);
 
 
 /**
- 默认为Alert弹出风格，默认action风格
+ 显示默认弹出和按钮风格（常用一）
 
  @param controller 当前弹出的控制器
  @param title 标题
@@ -66,7 +66,7 @@ typedef void(^ActionTwo)(void);
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionOne:(ActionOne)actionOne actionTwo:(ActionTwo)actionTwo;
 
 /**
- 使用默认action风格的alert，支持按钮事件
+ 显示默认按钮风格，可自定义弹出风格
 
  @param controller 当前弹出的控制器
  @param title 标题
@@ -80,7 +80,7 @@ typedef void(^ActionTwo)(void);
 
 
 /**
- 默认弹出方式为Alert，可自定义action风格，支出按钮事件
+ 显示默认弹出风格，可自定义按钮风格（常用二）
 
  @param controller 当前弹出的控制器
  @param title 标题
@@ -93,7 +93,7 @@ typedef void(^ActionTwo)(void);
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionStyles:(NSArray<NSNumber *> *)actionStyles actionOne:(ActionOne)actionOne actionTwo:(ActionOne)actionTwo;
 
 /**
- 可自己定义action风格的alert
+ 自定义弹出风格和按钮风格
 
  @param controller 当前弹出的控制器
  @param title 标题
