@@ -20,11 +20,9 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
 }
 
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title timeInterval:(NSTimeInterval)timerInerval {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"" preferredStyle:UIAlertControllerStyleAlert];
     
-    [NSTimer scheduledTimerWithTimeInterval:timerInerval target:self selector:@selector(dismissAlertController:) userInfo:alertController repeats:NO];
+    [self alertWithController:controller title:title message:@"" timeInterval:timerInerval];
     
-    [controller presentViewController:alertController animated:YES completion:nil];
 }
 
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message {
@@ -145,7 +143,7 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
     UIAlertController *alertController = timer.userInfo;
     
     [alertController dismissViewControllerAnimated:YES completion:nil];
-
+    
     [timer invalidate];
     timer = nil;
 }
