@@ -15,11 +15,7 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
 
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title {
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    
-    [NSTimer scheduledTimerWithTimeInterval:kDefaultTimerInterval target:self selector:@selector(dismissAlertController:) userInfo:alertController repeats:NO];
-    
-    [controller presentViewController:alertController animated:YES completion:nil];
+    [self alertWithController:controller title:title timeInterval:kDefaultTimerInterval];
     
 }
 
@@ -33,11 +29,7 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
 
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message {
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    
-    [NSTimer scheduledTimerWithTimeInterval:kDefaultTimerInterval target:self selector:@selector(dismissAlertController:) userInfo:alertController repeats:NO];
-    
-    [controller presentViewController:alertController animated:YES completion:nil];
+    [self alertWithController:controller title:title message:message timeInterval:kDefaultTimerInterval];
     
 }
 
@@ -48,6 +40,11 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
     [NSTimer scheduledTimerWithTimeInterval:timerInerval target:self selector:@selector(dismissAlertController:) userInfo:alertController repeats:NO];
     
     [controller presentViewController:alertController animated:YES completion:nil];
+}
+
++ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionOne:(ActionOne)actionOne actionTwo:(ActionTwo)actionTwo {
+    
+    [self alertWithController:controller title:title message:message actionTitles:titles actionOne:actionOne actionTwo:actionTwo alertStyle:UIAlertControllerStyleAlert];
 }
 
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionOne:(ActionOne)actionOne actionTwo:(ActionTwo)actionTwo alertStyle:(UIAlertControllerStyle)alertStyle {
@@ -89,6 +86,13 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
     }
     
     [controller presentViewController:alertController animated:YES completion:nil];
+}
+
+
++ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionStyles:(NSArray<NSNumber *> *)actionStyles actionOne:(ActionOne)actionOne actionTwo:(ActionOne)actionTwo {
+    
+    [self alertWithController:controller title:title message:message actionTitles:titles actionStyles:actionStyles actionOne:actionOne actionTwo:actionTwo alertStyle:UIAlertControllerStyleAlert];
+    
 }
 
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionStyles:(NSArray<NSNumber *> *)actionStyles actionOne:(ActionOne)actionOne actionTwo:(ActionOne)actionTwo alertStyle:(UIAlertControllerStyle)alertStyle {

@@ -52,8 +52,21 @@ typedef void(^ActionTwo)(void);
 + (void)alertWithController:(nonnull UIViewController *)controller title:(nonnull NSString *)title message:(nonnull NSString *)message timeInterval:(NSTimeInterval)timerInerval;
 
 
+
 /**
- 使用默认action风格的alert，最多支持两个按钮（一般两个就够了）
+ 默认为Alert弹出风格，默认action风格
+
+ @param controller 当前弹出的控制器
+ @param title 标题
+ @param message 消息内容
+ @param titles 按钮标题数组
+ @param actionOne 第一个按钮事件
+ @param actionTwo 第二个按钮事件
+ */
++ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionOne:(ActionOne)actionOne actionTwo:(ActionTwo)actionTwo;
+
+/**
+ 使用默认action风格的alert，支持按钮事件
 
  @param controller 当前弹出的控制器
  @param title 标题
@@ -64,6 +77,20 @@ typedef void(^ActionTwo)(void);
  @param alertStyle 弹出方式，采用sheet时会自动加上cacel按钮
  */
 + (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionOne:(ActionOne)actionOne actionTwo:(ActionTwo)actionTwo alertStyle:(UIAlertControllerStyle)alertStyle;
+
+
+/**
+ 默认弹出方式为Alert，可自定义action风格，支出按钮事件
+
+ @param controller 当前弹出的控制器
+ @param title 标题
+ @param message 消息内容
+ @param titles 按钮标题数组
+ @param actionStyles 自定义按钮风格
+ @param actionOne 第一个按钮事件
+ @param actionTwo 第二个按钮事件
+ */
++ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionStyles:(NSArray<NSNumber *> *)actionStyles actionOne:(ActionOne)actionOne actionTwo:(ActionOne)actionTwo;
 
 /**
  可自己定义action风格的alert
