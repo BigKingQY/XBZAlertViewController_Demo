@@ -1,6 +1,6 @@
 //
 //  UIAlertController+XBZ.m
-//  饼图_demo
+//  XBZAlertViewController_Demo
 //
 //  Created by BigKing on 2018/7/4.
 //  Copyright © 2018年 BigKing. All rights reserved.
@@ -13,26 +13,35 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
 @implementation UIAlertController (XBZ)
 
 
-+ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title {
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title {
     
     [self alertWithController:controller title:title timeInterval:kDefaultTimerInterval];
     
 }
 
-+ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title timeInterval:(NSTimeInterval)timerInerval {
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+               timeInterval:(NSTimeInterval)timerInerval {
     
     [self alertWithController:controller title:title message:@"" timeInterval:timerInerval];
     
 }
 
-+ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message {
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message {
     
     [self alertWithController:controller title:title message:message timeInterval:kDefaultTimerInterval];
     
 }
 
 
-+ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message timeInterval:(NSTimeInterval)timerInerval {
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               timeInterval:(NSTimeInterval)timerInerval {
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
     [NSTimer scheduledTimerWithTimeInterval:timerInerval target:self selector:@selector(dismissAlertController:) userInfo:alertController repeats:NO];
@@ -40,14 +49,25 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
     [controller presentViewController:alertController animated:YES completion:nil];
 }
 
-+ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionOne:(ActionOne)actionOne actionTwo:(ActionTwo)actionTwo {
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionTwo)actionTwo {
     
-    [self alertWithController:controller title:title message:message actionTitles:titles actionOne:actionOne actionTwo:actionTwo alertStyle:UIAlertControllerStyleAlert];
+    [self alertWithController:controller title:title message:message actionTitles:titles actionOne:actionOne actionTwo:actionTwo isAlertStyle:YES];
 }
 
-+ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionOne:(ActionOne)actionOne actionTwo:(ActionTwo)actionTwo alertStyle:(UIAlertControllerStyle)alertStyle {
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionTwo)actionTwo
+               isAlertStyle:(BOOL)isAlertStyle; {
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:alertStyle];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:isAlertStyle ? UIAlertControllerStyleAlert : UIAlertControllerStyleActionSheet];
     
     switch (titles.count) {
             break;
@@ -79,7 +99,7 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
     }
     
     
-    if (alertStyle == UIAlertControllerStyleActionSheet) {
+    if (!isAlertStyle) {
         [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:NULL]];
     }
     
@@ -87,15 +107,28 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
 }
 
 
-+ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionStyles:(NSArray<NSNumber *> *)actionStyles actionOne:(ActionOne)actionOne actionTwo:(ActionOne)actionTwo {
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+               actionStyles:(NSArray<NSNumber *> *)actionStyles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionOne)actionTwo {
     
-    [self alertWithController:controller title:title message:message actionTitles:titles actionStyles:actionStyles actionOne:actionOne actionTwo:actionTwo alertStyle:UIAlertControllerStyleAlert];
+    [self alertWithController:controller title:title message:message actionTitles:titles actionStyles:actionStyles actionOne:actionOne actionTwo:actionTwo isAlertStyle:YES];
     
 }
 
-+ (void)alertWithController:(nonnull UIViewController *)controller title:(NSString *)title message:(NSString *)message actionTitles:(nonnull NSArray<NSString *> *)titles actionStyles:(NSArray<NSNumber *> *)actionStyles actionOne:(ActionOne)actionOne actionTwo:(ActionOne)actionTwo alertStyle:(UIAlertControllerStyle)alertStyle {
++ (void)alertWithController:(nonnull UIViewController *)controller
+                      title:(NSString *)title
+                    message:(NSString *)message
+               actionTitles:(nonnull NSArray<NSString *> *)titles
+               actionStyles:(NSArray<NSNumber *> *)actionStyles
+                  actionOne:(ActionOne)actionOne
+                  actionTwo:(ActionOne)actionTwo
+               isAlertStyle:(BOOL)isAlertStyle {
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:alertStyle];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:isAlertStyle ? UIAlertControllerStyleAlert : UIAlertControllerStyleActionSheet];
     
     switch (titles.count) {
             break;
@@ -130,7 +163,7 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
     }
     
     
-    if (alertStyle == UIAlertControllerStyleActionSheet) {
+    if (!isAlertStyle) {
         [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:NULL]];
     }
     
