@@ -67,43 +67,8 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
                   actionTwo:(ActionTwo)actionTwo
                isAlertStyle:(BOOL)isAlertStyle; {
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:isAlertStyle ? UIAlertControllerStyleAlert : UIAlertControllerStyleActionSheet];
+    [self alertWithController:controller title:title message:message actionTitles:titles actionStyles:@[@(UIAlertActionStyleDefault), @(UIAlertActionStyleDefault)] actionOne:actionOne actionTwo:actionTwo isAlertStyle:isAlertStyle];
     
-    switch (titles.count) {
-            break;
-        case 1:
-        {
-            [alertController addAction:[UIAlertAction actionWithTitle:titles.firstObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                if (actionOne) {
-                    actionOne();
-                }
-            }]];
-        }
-            break;
-        case 2:
-        {
-            [alertController addAction:[UIAlertAction actionWithTitle:titles.firstObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                if (actionOne) {
-                    actionOne();
-                }
-            }]];
-            [alertController addAction:[UIAlertAction actionWithTitle:titles.lastObject style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                if (actionTwo) {
-                    actionTwo();
-                }
-            }]];
-        }
-            break;
-        default:
-            break;
-    }
-    
-    
-    if (!isAlertStyle) {
-        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:NULL]];
-    }
-    
-    [controller presentViewController:alertController animated:YES completion:nil];
 }
 
 
