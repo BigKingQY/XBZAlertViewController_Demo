@@ -67,7 +67,7 @@ NSTimeInterval kDefaultTimerInterval = 2.f;
                   actionTwo:(ActionTwo)actionTwo
                isAlertStyle:(BOOL)isAlertStyle; {
     
-    [self alertWithController:controller title:title message:message actionTitles:titles actionStyles:@[@(UIAlertActionStyleDefault), @(UIAlertActionStyleDefault)] actionOne:actionOne actionTwo:actionTwo isAlertStyle:isAlertStyle];
+    [self alertWithController:controller title:title message:message actionTitles:titles actionStyles:@[@(UIAlertActionStyleDefault)] actionOne:actionOne actionTwo:actionTwo isAlertStyle:isAlertStyle];
     
 }
 
